@@ -28,28 +28,10 @@ class public_suffix_json{
 	echo date('[d/m/Y H:i:s] ') . 'Downloading Dat file' . PHP_EOL;
         $this->downloadFile();
 
-	//$download_new = false;
-        //if(!file_exists($this->localfile)){
-	//    $this->downloadFile();
-	//    //$download_new = true;	
-        //}
-
 	if(!file_exists($this->localfile)){
 	    echo date('[d/m/Y H:i:s] ') . 'ERROR: Invalid dat file!' . PHP_EOL;
 	    exit;
         }
-
-	//if(false == $download_new){
-	//    $local_time = $this->get_local_time();
-        //    $remote_time = $this->get_remote_time();
-	//    if($remote_time == $local_time){
-	//        echo date('[d/m/Y H:i:s] ') . 'Already Up-To-Date' . PHP_EOL;
-	//	exit;    
-        //    }
-	//}
-
-	//echo date('[d/m/Y H:i:s] ') . 'Downloading Dat file' . PHP_EOL;
-	//$this->downloadFile();
 
 	echo date('[d/m/Y H:i:s] ') . 'Populating json file' . PHP_EOL;
         $obj = new StdClass;
@@ -73,7 +55,6 @@ class public_suffix_json{
         $cmd .= ')';
 
 	passthru($cmd);
-	//echo $cmd;
     }
 
     private function downloadFile(){
