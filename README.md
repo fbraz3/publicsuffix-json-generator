@@ -1,3 +1,3 @@
 # publicsuffix-json-generator
 
-Source code thats generate https://github.com/fbraz3/publicsuffix-json
+Source code that generates https://github.com/fbraz3/publicsuffix-json
