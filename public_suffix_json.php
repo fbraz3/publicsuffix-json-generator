@@ -106,10 +106,10 @@ class public_suffix_json{
                 continue;
             }
 
-            if(preg_match('#^\*\.(.*)#', $buffer, $output)){
-                $buffer = $output[1];
-                unset($output);
-            }
+            //if(preg_match('#^\*\.(.*)#', $buffer, $output)){
+            //    $buffer = $output[1];
+            //    unset($output);
+            //}
 
             $ret[$flag][] = trim($buffer);
         }
