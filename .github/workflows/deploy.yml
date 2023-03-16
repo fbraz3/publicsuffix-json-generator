@@ -23,5 +23,5 @@ jobs:
         git clone https://github.com/fbraz3/publicsuffix-json-generator.git .
         ls -la ~
         ls -la ~/.ssh
-#        git clone git@github.com:fbraz3/publicsuffix-json.git repo
+        git clone git@github.com:fbraz3/publicsuffix-json.git repo
 #        ls -la
