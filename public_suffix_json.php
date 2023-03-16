@@ -60,7 +60,7 @@ class public_suffix_json{
     private function downloadFile(){
 	echo date('[d/m/Y H:i:s] ') . 'Downloading DAT raw file' . PHP_EOL;
         $cmd = '$(which wget) ' . $this->url . ' -O ' . $this->localfile;
-        return shell_exec($cmd . ' 2>&1');
+        return passthru($cmd . ' 2>&1');
     }
 
     private function get_local_time(){
