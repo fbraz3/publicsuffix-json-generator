@@ -18,6 +18,7 @@ jobs:
       run: |
         mkdir ~/.ssh
         echo ${{ secrets.SSH_PUBLIC_KEY }} > ~/.ssh/id_rsa.pub
+        echo ${{ secrets.SSH_PRIVATE_KEY }} > ~/.ssh/id_rsa
         chmod -R 700 ~/.ssh
         apt update; apt -fy install git
         git clone https://github.com/fbraz3/publicsuffix-json-generator.git .
