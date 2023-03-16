@@ -10,18 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     container: php
     steps:
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_PUBLIC_KEY }}
+        
 #    - uses: actions/checkout@v3
 #      with:
 #        ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 #        persist-credentials: true
     - name: Commit files
       run: |
-        mkdir ~/.ssh
-        echo "${{ secrets.SSH_PUBLIC_KEY }}" > ~/.ssh/id_rsa.pub
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod -R 700 ~/.ssh
-        cat ~/.ssh/id_rsa
-        cat ~/.ssh/id_rsa.pub
+#        mkdir ~/.ssh
+#        echo "${{ secrets.SSH_PUBLIC_KEY }}" > ~/.ssh/id_rsa.pub
+#        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+#        chmod -R 700 ~/.ssh
+#        cat ~/.ssh/id_rsa
+#        cat ~/.ssh/id_rsa.pub
 #        apt update; apt -fy install git
 #        git clone https://github.com/fbraz3/publicsuffix-json-generator.git .
 #        ls -la ~
