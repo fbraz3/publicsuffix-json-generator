@@ -15,21 +15,12 @@ jobs:
       with:
         key: ${{ secrets.SSH_PUBLIC_KEY }}
         known_hosts: unnecessary
-#    - uses: actions/checkout@v3
-#      with:
-#        ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-#        persist-credentials: true
-    - name: Commit files
+    - name: Install packages
       run: |
-#        mkdir ~/.ssh
-#        echo "${{ secrets.SSH_PUBLIC_KEY }}" > ~/.ssh/id_rsa.pub
-#        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-#        chmod -R 700 ~/.ssh
-#        cat ~/.ssh/id_rsa
-#        cat ~/.ssh/id_rsa.pub
-#        apt update; apt -fy install git
-#        git clone https://github.com/fbraz3/publicsuffix-json-generator.git .
-#        ls -la ~
-#        ls -la ~/.ssh
-#        git clone git@github.com:fbraz3/publicsuffix-json.git repo
-#        ls -la
+        apt update; apt -fy install git
+    - name: Clone Repo
+      run: |
+        apt update; apt -fy install git
+        git clone https://github.com/fbraz3/publicsuffix-json-generator.git .
+        git clone git@github.com:fbraz3/publicsuffix-json.git repo
+        ls -la
