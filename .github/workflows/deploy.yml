@@ -17,7 +17,7 @@ jobs:
         known_hosts: unnecessary
     - name: Install packages
       run: |
-        apt update; apt -fy install git
+        apt update; apt -fy install git wget curl
     - name: Clone Repo
       run: |
         apt update; apt -fy install git
