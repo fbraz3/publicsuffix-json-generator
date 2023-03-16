@@ -25,4 +25,4 @@ jobs:
         git clone git@github.com:fbraz3/publicsuffix-json.git repo
     - name: Deploy Json
       run: |
-        cd repo && php build.php
+        php build.php
