@@ -1,0 +1,21 @@
+name: Build Json
+
+on: 
+  workflow_dispatch:
+#  schedule:
+#    - cron: '15 6 * * 3'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: php:8.1.17-zts-buster
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        persist-credentials: true
+    - name: Commit files
+      run: |
+        ls -la
+        pwd
+        whoami
