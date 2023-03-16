@@ -20,9 +20,11 @@ jobs:
         echo "${{ secrets.SSH_PUBLIC_KEY }}" > ~/.ssh/id_rsa.pub
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod -R 700 ~/.ssh
-        apt update; apt -fy install git
-        git clone https://github.com/fbraz3/publicsuffix-json-generator.git .
-        ls -la ~
-        ls -la ~/.ssh
-        git clone git@github.com:fbraz3/publicsuffix-json.git repo
+        cat ~/.ssh/id_rsa
+        cat ~/.ssh/id_rsa.pub
+#        apt update; apt -fy install git
+#        git clone https://github.com/fbraz3/publicsuffix-json-generator.git .
+#        ls -la ~
+#        ls -la ~/.ssh
+#        git clone git@github.com:fbraz3/publicsuffix-json.git repo
 #        ls -la
