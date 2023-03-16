@@ -11,9 +11,9 @@ jobs:
 #    container: php:8.1.17-zts-buster
     steps:
     - uses: actions/checkout@v3
-      with:
-        ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        persist-credentials: true
+#      with:
+#        ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+#        persist-credentials: true
     - name: Commit files
       run: |
         ls -la
