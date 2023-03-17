@@ -20,8 +20,10 @@ jobs:
         apt update; apt -fy install git wget curl
     - name: Setup GIT
       run: |
-        git config --global user.email "fbraz3@gmail.com"
-        git config --global user.name "Felipe Braz"
+        export GIT_USER=${{secrets.GIT_USER}}
+        export GIT_EMAIL=${{secrets.GIT_EMAIL}}
+        git config --global user.name "$GIT_USER"
+        git config --global user.email "$GIT_EMAIL"
     - name: Clone Repo
       run: |
         apt update; apt -fy install git
