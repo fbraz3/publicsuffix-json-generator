@@ -2,8 +2,8 @@ name: Build Json
 
 on: 
   workflow_dispatch:
-#  schedule:
-#    - cron: '15 6 * * 3'
+  schedule:
+    - cron: '0 6 * * *'
 
 jobs:
   build:
@@ -15,13 +15,13 @@ jobs:
       with:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         known_hosts: unnecessary
+    - name: Install packages
+      run: |
+        apt update; apt -fy install git wget curl
     - name: Setup GIT
       run: |
         git config --global user.email "fbraz3@gmail.com"
         git config --global user.name "Felipe Braz"
-    - name: Install packages
-      run: |
-        apt update; apt -fy install git wget curl
     - name: Clone Repo
       run: |
         apt update; apt -fy install git
