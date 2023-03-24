@@ -18,16 +18,19 @@ jobs:
     - name: Install packages
       run: |
         apt update; apt -fy install git wget curl
+    - name: Setup SSH
+      run: |
+        ssh-keygen -f "/root/.ssh/known_hosts" -R "github.com"
+        ssh-keygen -F github.com || ssh-keyscan github.com >> /root/.ssh/known_hosts
     - name: Setup GIT
       run: |
         export GIT_USER=${{secrets.GIT_USER}}
         export GIT_EMAIL=${{secrets.GIT_EMAIL}}
         git config --global user.name "$GIT_USER"
         git config --global user.email "$GIT_EMAIL"
+        git config --global pull.rebase false
     - name: Clone Repo
       run: |
-        ssh-keygen -f "/root/.ssh/known_hosts" -R "github.com"
-        ssh-keygen -F github.com || ssh-keyscan github.com >> /root/.ssh/known_hosts
         git clone https://github.com/fbraz3/publicsuffix-json-generator.git .
         git clone git@github.com:fbraz3/publicsuffix-json.git repo
     - name: Deploy Json
