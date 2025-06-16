@@ -29,11 +29,11 @@ cd publicsuffix-json-generator
 php generate.php > publicsuffix.json
 ```
 
-2. Use the JSON in Your Project
+### 2. Use the JSON in Your Project
 
-### php
+#### php
 
-```php
+``` php
 $data = json_decode(file_get_contents('publicsuffix.json'), true);
 $suffixes = $data['rules'];
 // Example: check if 'co.uk' is a public suffix
@@ -42,9 +42,9 @@ if (in_array('co.uk', $suffixes)) {
 }
 ```
 
-### javascript (nodejs)
+#### javascript (nodejs)
 
-```javascript
+``` javascript
 const data = require('./publicsuffix.json');
 const suffixes = data.rules;
 // Example: check if 'com' is a public suffix
@@ -53,7 +53,7 @@ if (suffixes.includes('com')) {
 }
 ```
 
-### python
+#### python
 
 ``` python
 const data = require('./publicsuffix.json');
@@ -64,9 +64,9 @@ if (suffixes.includes('com')) {
 }
 ```
 
-### go
+#### go
 
-```go
+``` go
 import (
     "encoding/json"
     "os"
